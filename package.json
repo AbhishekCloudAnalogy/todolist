@@ -8,7 +8,9 @@
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "dev": "ng build && gulp rm && gulp build-dev-package && gulp deploy && ng serve",
+    "prod": "ng build && gulp rm && gulp build-package && gulp deploy"
   },
   "private": true,
   "dependencies": {
@@ -30,6 +32,13 @@
     "@types/jasmine": "^2.5.53",
     "@types/node": "~6.0.79",
     "codelyzer": "^3.1.1",
+    "dotenv": "^8.0.0",
+    "gulp": "^3.9.1",
+    "gulp-file": "^0.4.0",
+    "gulp-jsforce-deploy": "^1.1.2",
+    "gulp-rename": "^1.4.0",
+    "gulp-replace": "^1.0.0",
+    "gulp-zip": "^5.0.0",
     "jasmine-core": "^2.6.4",
     "jasmine-spec-reporter": "^4.1.1",
     "karma": "^1.7.0",

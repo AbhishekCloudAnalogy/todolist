@@ -4,6 +4,8 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
+import {LocationStrategy} from '@angular/common';
+import {SalesforceHashLocationStrategy} from './util/sf-path-location-strategy';
 
 @NgModule({
   declarations: [
@@ -14,7 +16,9 @@ import { AppComponent } from './app.component';
     FormsModule,
     HttpModule
   ],
-  providers: [],
+  providers: [
+    { provide: LocationStrategy, useClass: SalesforceHashLocationStrategy }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
